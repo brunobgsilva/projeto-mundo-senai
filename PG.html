@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progressão Geométrica</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <div class="centralizador fundo">
+
+        <a href="./inicio.html" class="link-voltar">
+            Voltar ao início
+        </a>
+
+        <h2 class="titulo">Calculadora de Progressão Geométrica (PG)</h2>
+
+        <p>
+            Imagine um vírus. <br>
+            Cada pessoa que é infectada pelo vírus, infecta outras 5 pessoas. <br>
+            Ou seja, 5 infectados irão infectar 25 pessoas.
+        </p>
+
+        <input type="number" id="a1" placeholder="Primeiro termo (a₁):">
+        <input type="number" id="q" placeholder="Razão da PG (q):">
+        <input type="number" id="n" placeholder="Número de termos (n):">
+        
+        <button onclick="calcularPG()"class="botao">
+            Calcular n-ésimo termo
+        </button>
+    </div>
+
+    
+
+<script>
+  function calcularPG() {
+    const a1 = Number(document.getElementById('a1').value);
+    const q = Number(document.getElementById('q').value);
+    const n = Number(document.getElementById('n').value);
+
+    const an = a1 * q ** (n-1);
+    console.log(an);
+    
+    let termos = [];
+    for (let posicao = 0; posicao < n;  posicao = posicao + 1) {
+        termos.push(a1 * q ** posicao);
+    }
+    console.log(termos);
+    alert("Esse é o n-ésimo termo: " + an)
+  }
+
+  </script>
+</body>
+</html>
