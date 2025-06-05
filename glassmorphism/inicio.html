@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Início</title>
+
+    <style>
+
+        .titulo {
+            color: rgb(255, 255, 255);
+            text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.444);
+        }
+
+        .link-voltar {
+            margin-top: 15px;
+            margin-right: 25px;
+            padding-right: 20px;
+            padding-left: 20px;
+            padding-bottom: 10px;
+            padding-top: 10px;
+            background-color: rgb(55, 225, 85);
+            color: rgb(0, 0, 0);
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            width: 250px;
+            text-align: center;
+            transition: all 0.2s;
+        }
+    
+        .link-voltar:hover {
+            box-shadow: 0px 0px 10px 1px rgba(133, 255, 141, 0.667);
+        }
+    
+        .fundo {
+            background: #101010;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .centralizador {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+        }  
+    
+        * {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    
+        h1 {
+            color: white;
+            margin-bottom: 25px;
+        }
+
+        .vidro {
+            background: linear-gradient(45deg, #ffffff10, rgba(0, 0, 0, 0.125));
+            backdrop-filter: blur(8px);
+            border: 3px solid rgba(255, 255, 255, 0.06);
+            border-radius: 30px;
+            box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        .card {
+            padding: 100px 30px;
+        }
+
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="fundo centralizador">
+        <div class="card centralizador vidro">
+
+            <h1 class="titulo">Selecione a calculadora que você deseja.</h1>
+        
+            <a href="./PA.html" class="link-voltar">
+                Progressão Aritmética
+            </a>
+        
+            <a href="./PG.html" class="link-voltar">
+                Progressão Geométrica
+            </a>
+        
+            <a href="./bhaskara.html" class="link-voltar">
+                Bhaskara (exemplo prático)
+            </a>
+
+            <a href="./eq2grau.html" class="link-voltar">
+                Equação de 2º Grau
+            </a>
+
+        </div>
+    </div>
+    
+</body>
+
+</html>
+
+
+
+

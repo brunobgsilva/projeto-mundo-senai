@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progressão Aritmética</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    
+    <div class="fundo"> 
+
+        <div class="card centralizador vidro">
+            
+            <a href="./inicio.html" class="link-voltar">
+                Voltar ao inicio
+            </a>
+    
+            <h2 class="titulo">Calculadora de Progressão Aritmética (PA)</h2>
+
+            <p>
+            Uma pessoa quer saber qual será seu 4º salário
+            <br>
+            Ela irá receber como valor inicial R$1000,00.
+            <br>
+            Todos os meses ela recebe 100 reais de aumento.
+            <br>
+            Qual será o valor do 4º salário?
+            </p>
+    
+            <input type="number" placeholder="Primeiro termo (a₁):" id="a1">
+    
+            <input type="number" placeholder="Número de termos (n):" id="n">
+    
+            <input type="number" placeholder="Razão (r):" id="r">
+    
+            <button onclick="calcular()" class="botao">Calcular</button>
+    
+        </div>
+
+         <div class="card vidro card-formula centralizador">
+
+            <h2 class="titulo">
+                Fórmula:
+            </h2>
+
+            <img width="400px" height="65px" src="./PA.svg">
+
+        </div>
+
+    </div>
+ 
+<script>
+
+function calcular() {
+    const a1 = parseFloat(document.getElementById('a1').value);
+    const r = parseFloat(document.getElementById('r').value);
+    const n = parseInt(document.getElementById('n').value);
+
+    alert("O " + n + " salário será R$" + calculaPA(a1, n, r));
+}
+
+function calculaPA(a1, n, r) {
+    const an = a1 + (n - 1) * r;
+    return an;
+    console.log('RESULTADO: ', an);
+}
+
+</script>
+
+</body>
+</html>

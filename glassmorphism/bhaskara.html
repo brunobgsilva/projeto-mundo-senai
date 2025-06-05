@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bhaskara</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <div class="fundo">
+
+        <div class="vidro card centralizador">
+            <a href="./inicio.html" class="link-voltar">
+                Voltar ao início
+            </a>
+
+            <h1 class="titulo">Gato caindo do prédio</h1>
+            <p>
+                Um gato cai de cima de um prédio de certa altura. <br>
+                Vamos calcular quanto tempo o gato leva para chegar ao chão.
+            </p>
+
+            <label for="alturaPredio">Altura do prédio (m): </label>
+            <input type="number" id="alturaPredio" value="15" min="0" step="0.1">
+
+            <h3 id="resultado" class="titulo"></h3>
+
+            <button class="botao" onclick="calcularTempoQueda()">Calcular tempo de queda</button>
+
+        </div>  
+
+        <div class="card vidro card-formula centralizador">
+
+            <h2 class="titulo">
+                Fórmula:
+            </h2>
+
+            <img width="300px" height="90px" src="./eq2grau.png">
+
+        </div>
+
+<script>
+    function calcularTempoQueda() {
+        const gravidade = 9.8;
+        const alturaPredio = Number(document.getElementById('alturaPredio').value);
+
+        const a = -gravidade / 2; // porque a aceleração da gravidade faz a bola cair com aceleração negativa (para baixo)
+        const b = 0; // porque não há velocidade inicial vertical
+        const c = alturaPredio;
+
+        const delta = b * b - 4 * a * c;
+
+        // Delta não pode ser menor que 0 por que o tempo não pode ser negativo.
+        if (delta < 0) {
+            alert("Erro: Não existe solução real.");
+            return;
+        }
+
+        const raiz1 = (-b + Math.sqrt(delta)) / (2 * a);
+        const raiz2 = (-b - Math.sqrt(delta)) / (2 * a);
+
+        // Tempo não pode ser negativo, pega a raiz positiva
+        const tempo = raiz1 > 0 ? raiz1 : raiz2;
+
+        document.getElementById("resultado")
+        .innerText = 'Tempo para o gato atingir o chão: ' + tempo.toFixed(2) + ' segundos.';
+    }
+</script>
+    
+</body>
+
+</html>
